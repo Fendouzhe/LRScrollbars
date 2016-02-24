@@ -66,7 +66,7 @@
     
     // 段子
     LRChildTableViewController *wordVc3 = [[LRChildTableViewController alloc] init];
-    wordVc3.title = @"啊峥";
+    wordVc3.title = @"体育";
     [self addChildViewController:wordVc3];
     
     LRChildTableViewController *wordVc4 = [[LRChildTableViewController alloc] init];
