@@ -44,7 +44,7 @@
 /** 记录是否在动画 */
 @property (nonatomic, assign) BOOL isAniming;
 
-/* 是否初始化 */
+/** 是否初始化 */
 @property (nonatomic, assign) BOOL isInitial;
 
 /** 标题间距 */
@@ -64,6 +64,7 @@
     }
     return self;
 }
+
 - (void)awakeFromNib{
     [super awakeFromNib];
     [self initial];
@@ -76,7 +77,8 @@
     //设置为no，让它不要自动调整,否则cell和titleScrollView距离不正常
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
-//初始化
+
+/// 初始化
 - (void)setup{
     //字体渐变，模式是RGB
     if (_isShowTitleGradient && _titleColorGradientStyle == LRTitleColorGradientStyleRGB) {
@@ -163,6 +165,7 @@
     }
     return _titleScrollView;
 }
+
 /// 懒加载内容滚动视图
 - (UICollectionView *)contentCollectionView{
     if (_contentCollectionView == nil) {
@@ -181,7 +184,8 @@
     }
     return _contentCollectionView;
 }
-// 懒加载整个内容view
+
+/// 懒加载整个内容view
 - (UIView *)contentView{
     if (_contentView == nil) {
         UIView *contentView = [[UIView alloc] init];
@@ -228,12 +232,14 @@
         contentBlock(self.contentView);
     }
 }
+
 /// 一次性设置所有颜色渐变属性
 - (void)setUpTitleGradient:(void (^)(BOOL *, LRTitleColorGradientStyle *, CGFloat *, CGFloat *, CGFloat *, CGFloat *, CGFloat *, CGFloat *))titleGradientBlock{
     if (titleGradientBlock) {
         titleGradientBlock(&_isShowTitleGradient,&_titleColorGradientStyle,&_startR,&_startG,&_startB,&_endR,&_endG,&_endB);
     }
 }
+
 /// 一次性设置所有遮盖属性
 - (void)setUpCoverEffect:(void (^)(BOOL *, UIColor *__autoreleasing *, CGFloat *))coverEffectBlock{
     UIColor *color;
@@ -245,6 +251,7 @@
         }
     }
 }
+
 /// 一次性设置所有字体缩放属性
 - (void)setUpTitleScale:(void (^)(BOOL *isShowTitleScale,CGFloat *titleScale))titleScaleBlock{
     if (titleScaleBlock) {
@@ -330,6 +337,7 @@
         [self setUpAllTitle];
     }
 }
+
 #pragma mark - 计算所有标题宽度 VS 添加标题方法------------
 /// 计算所有标题宽度
 - (void)setUpTitleWidth{
@@ -369,7 +377,8 @@
     //设置里面子控件间的间距
     self.titleScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, _titleMargin);
 }
-// 设置所有标题
+
+/// 设置所有标题
 - (void)setUpAllTitle{
     // 遍历所有的子控制器
     NSUInteger count = self.childViewControllers.count;
@@ -416,7 +425,7 @@
 }
 
 #pragma mark - 标题效果渐变方法 --------------
-// 设置左右标题颜色渐变---腾讯 VS 今日头条使用 VS 网易新闻 --------
+/// 设置左右标题颜色渐变---腾讯 VS 今日头条使用 VS 网易新闻 --------
 - (void)setupTitleColorGradientWithOffset:(CGFloat)offsetX rightLabel:(LRDisplayTitleLabel *)rightLabel leftLabel:(LRDisplayTitleLabel *)leftLabel{
     
     if (_isShowTitleGradient == NO) return;
@@ -443,7 +452,7 @@
         
         return;
     }
-    //实色渲染---------今日头条使用---------
+    //实色渲染---------今日头条---------
     if (_titleColorGradientStyle == LRTitleColorGradientStyleFill) {
         // 获取移动距离 = 当前偏移值 - 上一次偏移值
         CGFloat offsetDelta = offsetX - _lastOffsetX;
@@ -536,7 +545,7 @@
 
 #pragma mark - 标题点击处理 -----------------
 
-//标题文本点击手势事件回调方法
+/// 标题文本点击手势事件回调方法
 - (void)titleLabelClick:(UITapGestureRecognizer *)tap{
     //记录点击了标题
     _isClickTitle = YES;
@@ -570,7 +579,7 @@
     // 点击事件处理完成
     _isClickTitle = NO;
 }
-///选中标签
+/// 选中标签
 - (void)selectLabel:(UILabel *)label{
     //遍历数组标签,未选中的状态还原
     for (LRDisplayTitleLabel *titleLabel in self.titleLabels) {
@@ -607,7 +616,8 @@
     // 设置cover
     [self setUpCoverView:label];
 }
-// 设置标题居中
+
+/// 设置标题居中
 - (void)setLabelTitleCenter:(UILabel *)label{
     // 设置标题滚动区域的偏移量（即标题中心x坐标与屏幕中心x坐标距离）
     CGFloat offsetX = label.center.x - LRScreenW * 0.5;
@@ -626,7 +636,7 @@
     [self.titleScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 }
 
-// 设置下标的位置
+/// 设置下标的位置
 - (void)setUpUnderLine:(UILabel *)label{
     //获得文字尺寸
     CGSize titleSize = [label.text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.titleFont} context:nil].size;
@@ -647,7 +657,7 @@
     }];
 }
 
-// 设置cover
+/// 设置cover
 - (void)setUpCoverView:(UILabel *)label{
     //获得文字尺寸
     CGSize titleSize = [label.text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.titleFont} context:nil].size;
@@ -671,7 +681,7 @@
 }
 
 #pragma mark - 刷新界面方法
-//更新界面
+/// 更新界面
 - (void)refreshDisplay{
     // 清空之前所有标题
     [self.titleLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
@@ -686,10 +696,11 @@
     [self setUpAllTitle];
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma mark - UICollectionViewDataSource-----
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.childViewControllers.count;
 }
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     // 移除之前的子控件
@@ -701,8 +712,9 @@
     
     return cell;
 }
-#pragma mark - UIScrollViewDelegate
-// 减速完成
+
+#pragma mark - UIScrollViewDelegate------
+/// 减速完成
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CGFloat offsetX = scrollView.contentOffset.x;
     //转换为NSInteger类型
@@ -731,6 +743,7 @@
     //发出通知加载对应控制器界面
     [[NSNotificationCenter defaultCenter] postNotificationName:LRDisplayViewClickOrScrollDidFinshNotice object:vc];
 }
+
 ///滚动动画完成调用
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     _isAniming = NO;
@@ -765,6 +778,7 @@
     // 记录偏移量
     _lastOffsetX = offsetX;
 }
+
 @end
 
 

@@ -26,12 +26,14 @@
     }
     return _array;
 }
+
 - (RequesCover *)cover{
     if (_cover == nil) {
         _cover = [RequesCover requestCover];
     }
     return _cover;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -99,6 +101,7 @@
 
     });
 }
+
 - (void)loadMoreData{
     [self.array addObjectsFromArray:@[@"8",@"8",@"8"]];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -111,10 +114,12 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.array.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *ID = @"cell";
