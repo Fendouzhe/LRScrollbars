@@ -1,9 +1,9 @@
 //
 //  RequesCover.h
-//  YZDisplayViewControllerDemo
+//  LRDisplayController
 //
-//  Created by yz on 15/12/21.
-//  Copyright © 2015年 yz. All rights reserved.
+//  Created by 雷路荣 on 16/1/22.
+//  Copyright © 2016年 leilurong. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
