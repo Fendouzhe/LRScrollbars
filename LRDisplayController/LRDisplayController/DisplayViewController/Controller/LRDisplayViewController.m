@@ -366,7 +366,7 @@
     //如果标题总宽度超过屏幕宽度，就设置标题间距20
     if (totalWidth > LRScreenW) {
         _titleMargin = margin;
-        //设置有间距
+        //设置右间距
         self.titleScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, _titleMargin);
         return;
     }
@@ -521,6 +521,7 @@
     self.underLine.width += underLineWidth;
     // 移动下划线
     self.underLine.x += underLineTransformX;
+
 }
 
 /// 设置遮盖偏移 ------ 腾讯使用-------
