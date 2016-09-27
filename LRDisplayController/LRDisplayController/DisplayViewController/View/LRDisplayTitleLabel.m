@@ -24,7 +24,7 @@
     //绘制到当前label的宽度
     rect.size.width = rect.size.width * _progress;
     //向当前绘图环境所创建的内存中的label图片上填充一个矩形，绘制使用指定的混合模式。
-    UIRectFillUsingBlendMode(rect, kCGBlendModeSourceIn);
+    UIRectFillUsingBlendMode(rect, kCGBlendModeSourceIn);//用于今日头条
 }
 
 - (void)setProgress:(CGFloat)progress{
