@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="IIg-bx-i5h" customClass="SMSystermMessageView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oK3-IO-Wgx">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="systemMessageClick:" destination="IIg-bx-i5h" eventType="touchUpInside" id="spW-KK-3k7"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shaungkuaixiaoxi" translatesAutoresizingMaskIntoConstraints="NO" id="a15-l8-zRm">
+                    <rect key="frame" x="9" y="9" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="2ve-MY-klt"/>
+                        <constraint firstAttribute="width" constant="48" id="K7b-0r-pL1"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爽快消息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwZ-ht-7c1">
+                    <rect key="frame" x="65" y="11" width="60" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="JKx-po-AbY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请求加好友消息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVE-Mq-OR0">
+                    <rect key="frame" x="65" y="40" width="77" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="pkI-Yp-deR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbx-p5-8v1">
+                    <rect key="frame" x="291" y="11" width="20" height="20"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="EX3-Cx-egX"/>
+                        <constraint firstAttribute="width" constant="20" id="i47-vU-ZVN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xc-fH-SYD" userLabel="seplineView">
+                    <rect key="frame" x="10" y="65" width="310" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Ndh-NN-cFU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Dbx-p5-8v1" firstAttribute="centerY" secondItem="IIg-bx-i5h" secondAttribute="centerY" constant="-12" id="9Q5-q4-kLV"/>
+                <constraint firstItem="oK3-IO-Wgx" firstAttribute="leading" secondItem="IIg-bx-i5h" secondAttribute="leading" id="GMv-7E-Mx0"/>
+                <constraint firstItem="7xc-fH-SYD" firstAttribute="leading" secondItem="IIg-bx-i5h" secondAttribute="leading" constant="10" id="JHR-d1-MLm"/>
+                <constraint firstAttribute="trailing" secondItem="7xc-fH-SYD" secondAttribute="trailing" id="Lxf-rl-kiY"/>
+                <constraint firstAttribute="bottom" secondItem="7xc-fH-SYD" secondAttribute="bottom" id="V2i-LU-LrK"/>
+                <constraint firstItem="qVE-Mq-OR0" firstAttribute="leading" secondItem="a15-l8-zRm" secondAttribute="trailing" constant="8" id="YCa-uh-uny"/>
+                <constraint firstItem="a15-l8-zRm" firstAttribute="centerY" secondItem="IIg-bx-i5h" secondAttribute="centerY" id="YLb-Wa-9VQ"/>
+                <constraint firstAttribute="bottom" secondItem="oK3-IO-Wgx" secondAttribute="bottom" id="h9C-Lz-RPa"/>
+                <constraint firstItem="a15-l8-zRm" firstAttribute="leading" secondItem="IIg-bx-i5h" secondAttribute="leading" constant="9" id="kPJ-2S-WmH"/>
+                <constraint firstAttribute="trailing" secondItem="Dbx-p5-8v1" secondAttribute="trailing" constant="9" id="kkf-5D-gYU"/>
+                <constraint firstAttribute="trailing" secondItem="oK3-IO-Wgx" secondAttribute="trailing" id="mMf-2v-FPz"/>
+                <constraint firstItem="oK3-IO-Wgx" firstAttribute="top" secondItem="IIg-bx-i5h" secondAttribute="top" id="pzA-vq-rfr"/>
+                <constraint firstItem="qVE-Mq-OR0" firstAttribute="centerY" secondItem="IIg-bx-i5h" secondAttribute="centerY" constant="14" id="stk-rZ-NWM"/>
+                <constraint firstItem="CwZ-ht-7c1" firstAttribute="centerY" secondItem="IIg-bx-i5h" secondAttribute="centerY" constant="-13" id="uUm-eZ-hOe"/>
+                <constraint firstItem="CwZ-ht-7c1" firstAttribute="leading" secondItem="a15-l8-zRm" secondAttribute="trailing" constant="8" id="vwG-Gh-2cp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lineView" destination="7xc-fH-SYD" id="EGH-ub-0Rm"/>
+                <outlet property="meesageNumLabel" destination="Dbx-p5-8v1" id="LwO-Dn-BKa"/>
+                <outlet property="sepLineHeight" destination="Ndh-NN-cFU" id="74W-pL-QuP"/>
+                <outlet property="sysButton" destination="oK3-IO-Wgx" id="7Ch-Fb-u8Q"/>
+            </connections>
+            <point key="canvasLocation" x="272" y="316.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="shaungkuaixiaoxi" width="80" height="80"/>
+    </resources>
+</document>

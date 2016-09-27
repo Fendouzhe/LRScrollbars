@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A2301" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="detailProductSection4Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailProductSection4Cell" id="KGk-i7-Jjw" customClass="SMDetailProductSection4Cell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOf-Ga-pkA">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="48"/>
+                        <color key="backgroundColor" red="1" green="0.41758847872230054" blue="0.032128109194929255" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title="加入微货架">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="joinShelfBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QQZ-nY-FmP"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubb-1L-Lqn">
+                        <rect key="frame" x="160" y="0.0" width="160" height="48"/>
+                        <color key="backgroundColor" red="1" green="0.097447420133430662" blue="0.12962280261650627" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="分享">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="shareBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CzM-HF-rW0"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ubb-1L-Lqn" firstAttribute="leading" secondItem="JOf-Ga-pkA" secondAttribute="trailing" id="42z-q9-lQv"/>
+                    <constraint firstItem="ubb-1L-Lqn" firstAttribute="leading" secondItem="JOf-Ga-pkA" secondAttribute="trailing" id="8K3-aI-Zjh"/>
+                    <constraint firstAttribute="bottom" secondItem="ubb-1L-Lqn" secondAttribute="bottom" id="9cY-nY-fdP"/>
+                    <constraint firstItem="JOf-Ga-pkA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ggz-sp-XQa"/>
+                    <constraint firstAttribute="bottom" secondItem="JOf-Ga-pkA" secondAttribute="bottom" id="PUM-4Q-XUh"/>
+                    <constraint firstItem="ubb-1L-Lqn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="g3e-9G-Kus"/>
+                    <constraint firstItem="JOf-Ga-pkA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jzd-oy-dx1"/>
+                    <constraint firstAttribute="trailing" secondItem="ubb-1L-Lqn" secondAttribute="trailing" id="npz-eU-LrJ"/>
+                    <constraint firstItem="JOf-Ga-pkA" firstAttribute="width" secondItem="ubb-1L-Lqn" secondAttribute="width" id="pvM-Z4-tT9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="joinShelfBtn" destination="JOf-Ga-pkA" id="MhG-Wp-o5z"/>
+                <outlet property="shareBtn" destination="ubb-1L-Lqn" id="HN4-5k-EII"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,469 @@
+//
+//  ShuangKuai.pch
+//  ShuangKuai-iOS
+//
+//  Created by yuzhongkeji on 15/11/9.
+//  Copyright © 2015年 com.shuangkuaimai. All rights reserved.
+//
+
+#ifndef ShuangKuai_pch
+#define ShuangKuai_pch
+
+/***********************  头文件  **************************/
+#import "Masonry.h"
+#import "MJExtension.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
+#import "UIBarButtonItem+Extension.h"
+#import "UIView+Extension.h"
+#import <UIImageView+WebCache.h>
+#import "YTKKeyValueStore.h" //FMDB
+#import "UIImage+Extension.h"
+#import "UINavigationBar+Awesome.h"
+#import "Utils.h"
+#import "SKAPI.h"
+#import "NSDictionary+Extension.h"
+#import "SVProgressHUD.h"
+#import "UIView+Badge.h"
+#import "UIButton+Badge.h"
+#import "UITabBar+Badge.h"
+#import "SCLAlertView.h"
+#import "NSString+Extension.h"
+#import "UIViewExt.h"
+
+/***********************  RGB颜色  **************************/
+
+#define SMColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define SMColorAlpha(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+/***********************  随机颜色  **************************/
+
+#define SMRandomColor SMColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+/***********************  通知中心  **************************/
+#define SMNotificationCenter [NSNotificationCenter defaultCenter]
+
+/***********************  沙盒存储路径（文件名可改）  **************************/
+#define SMAccountPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.archive"]
+
+/***********************  根据屏幕高度判断手机设备  **************************/
+#define isIPhone4 ([UIScreen mainScreen].bounds.size.height == 480)
+#define isIPhone5 ([UIScreen mainScreen].bounds.size.height == 568)
+#define isIPhone6 ([UIScreen mainScreen].bounds.size.height == 667)
+#define isIPhone6p ([UIScreen mainScreen].bounds.size.height == 736)
+
+//iphone 5 到 6的倍数
+#define KMatch6 1.171875
+#define KMatch6Height 1.174295
+//iphone 5 到 6p的倍数
+#define KMatch6p 1.29375
+#define KMatch6pHeight 1.295775
+
+#define KMatch [UIScreen mainScreen].bounds.size.width / 320
+
+#define K5Width 320
+#define K5Height 568
+
+#define SMMatchHeight (KScreenHeight / K5Height * 1.0)
+#define SMMatchWidth (KScreenWidth / K5Width * 1.0)
+
+#define LRTitleScrollViewHeight 60
+#define LRTitleScrollViewTitleWidth 320/4 *KMatch
+
+/***********************  屏幕宽高  **************************/
+#define KScreenWidth [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
+
+/***********************  按钮棱角角度  **************************/
+#define SMCornerRadios 6
+
+/***********************  控制器左右两遍试图的间距  **************************/
+#define KMarginLeftRight 27
+
+/***********************  推 荐企业下面的按钮点击通知  **************************/
+#define KCompanyClickNotificationName @"companyBtnDidClick"
+#define KCompanyClickButtonKey @"companyBtn"
+
+#define KTaskInfoIconWidth 36
+
+#define KTuiguangCollectionCellHeight 231
+
+//场景推广推送消息type
+#define KPingTuan_71 71
+#define KMiaoSha_72 72
+#define KHuoDongYaoQing_73 73
+
+//场景推广内部个模块页码
+//旧
+#define KPingTuanPage @"0"
+#define KMiaoShaPage @"4"
+#define KHuoDongYaoQingPage @"1"
+//新
+#define KNewPingTuanPage 0
+#define KNewHuoDongYaoQingPage 1
+#define KNewMiaoShaPage 2
+
+///首页功能模块tag
+#define KOrderManagerTag @"2"
+#define KHuoBanLianXianTag @"3"
+#define KXieTongTaskTag @"5"
+#define KKeFuLianXianTag @"6"
+
+
+#ifdef DEBUG
+///#define SKAPI_PREFIX @"http://test.shuangkuai.co:8080/api/" ///旧
+#define SKAPI_PREFIX @"http://t.api.mobile.shuangkuai.co/api/"
+//数据台不包含 api/
+#define SKAPI_Short_PREFIX @"http://t.api.mobile.shuangkuai.co/"
+///陶俊服务器
+///#define SKAPI_PREFIX @"http://192.168.1.233:8282/api/"
+#define KWechatAcunt @"wxaccb0b95bb9326e1"
+///#define SKAPI_PREFIX_SHARE @"http://192.168.1.41:8020/ShuangKuai-Mobile/src/main/webapp/shuangkuai_app/" ///旧
+#define SKAPI_PREFIX_SHARE @"http://tm.shuangkuai.co/shuangkuai_app/"
+#define KOrderDetailShare @"http://tm.shuangkuai.co/shuangkuai_app/sk_odetail.html"
+#define KShoppingVcShare @"http://tm.shuangkuai.co/shuangkuai_app/"
+#define KRongTokenStr @"x18ywvqf8pwmc"
+#define SMLog(...) NSLog(@"%s %d \n %@ \n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+
+#else
+
+///#define SKAPI_PREFIX @"http://www.shuangkuai.co:1224/api/"
+#define SKAPI_PREFIX @"http://api.mobile.shuangkuai.co/api/"
+//数据台
+#define SKAPI_Short_PREFIX @"http://api.mobile.shuangkuai.co/"
+#define KWechatAcunt @"wx0cc9d5092f1a711c"
+#define SKAPI_PREFIX_SHARE @"http://m.shuangkuai.co/shuangkuai_app/"
+#define KOrderDetailShare @"http://m.shuangkuai.co/shuangkuai_app/sk_odetail.html"
+#define KShoppingVcShare @"http://m.shuangkuai.co/shuangkuai_app/"
+#define KRongTokenStr @"x4vkb1qpvebsk"
+#define SMLog(...)
+
+#endif
+
+
+
+
+
+/***********************  cell 选中状态 **************************/
+typedef NS_ENUM(NSUInteger, CellSelectType) {
+    CellSelectTypeNone,
+    CellSelectTypeNomarl,
+    CellSelectTypeSelect
+};
+
+//#define SKAPI_PREFIX                           @"http://www.shuangkuai.co:1224/api/"
+//#define SKAPI_PREFIX                           @"http://www.shuangkuai.co:1234/api/"
+//#define SKAPI_PREFIX                           @"http://120.76.156.35:8080/api/"
+
+
+//#define SKAPI_PREFIX                           @"http://test.shuangkuai.co:8080/api/"
+
+/***********************  爽快圈通知 带参数 **************************/
+#define KCircelImageClickNot @"circelImageClickNot"
+#define KCircelImageClickBtnKey @"circelImageClickBtnKey"
+
+#define KCircelToolBtnClickNot @"circelToolBtnClickNot"
+#define KCircelToolBtnKey @"circelToolBtnKey"
+#define KCircelToolCellKey @"circelToolCellKey"
+#define KCircelTweetKey @"circelTweetKey"
+
+#define KCircelToolRepostBtnClickNot @"circelToolRepostBtnClickNot"
+#define KCircelToolRepostBtnClickNotKey @"circelToolRepostBtnClickNotKey"
+
+
+#define KAllPhotosAlreadyLoad @"allPhotosAlreadyLoad"
+
+/***********************  控制器背景色  **************************/
+#define KControllerBackGroundColor SMColor(241, 242, 244);
+
+/***********************  推荐企业下面，同时显示的企业数量  **************************/
+#define OneRowImageViewNum 3
+#define KNavTitleFont 16
+
+/***********************  关注页面 推荐更多button 的tag  **************************/
+typedef enum : NSUInteger {
+    recommendBtnTypeCompany,
+    recommendBtnTypeProduct,
+} recommendBtnType;
+
+/***********************  app中常用到的红色和灰色  **************************/
+#define KGrayColor SMColor(183, 183, 183)
+#define KRedColor SMColor(180, 0, 27)
+#define KRedColorLight SMColor(231, 38, 68)
+#define KBlackColorLight SMColor(75, 75, 87)
+#define KBatteryBarColor SMColor(197, 0, 24)
+#define KRedColorAlert SMColor(227, 28, 25)
+#define KHomePageRed SMColor(251, 115, 131)
+#define KGrayColorSeparatorLine SMColor(230, 230, 230)
+#define KTuiGuangVcBgColor SMColor(236, 237, 238)
+
+/***************  状态栏高度（电池栏架上导航栏的高度）  ******************/
+#define KStateBarHeight 64
+
+/***************  tabBar栏高度  ******************/
+#define KTabBarHeight 49
+
+/****************Emotion    通知*****************/
+#define SMEmotionNotificationName @"emotionBtnClick"
+#define SMEmotionDictKey @"emotion"
+
+
+/****************   接口   *****************/
+#import "SKAPI.h"
+
+/****************  字体  ****************/
+#define KDefaultFontBig [UIFont systemFontOfSize:15 *SMMatchWidth]
+#define KDefaultFont16Match [UIFont systemFontOfSize:16 *SMMatchWidth]
+#define KDefaultFontMiddle [UIFont systemFontOfSize:14]
+#define KDefaultFontMiddleMatch [UIFont systemFontOfSize:14*SMMatchWidth]
+#define KDefaultFont13Match [UIFont systemFontOfSize:13*SMMatchWidth]
+#define KDefaultFont12 [UIFont systemFontOfSize:12]
+#define KDefaultFont12Match [UIFont systemFontOfSize:12*KMatch]
+#define KDefaultFont13 [UIFont systemFontOfSize:13]
+#define KDefaultFont [UIFont systemFontOfSize:12 *SMMatchWidth]
+#define KDefaultFontSmall  [UIFont systemFontOfSize:10 *SMMatchWidth]
+
+#define ScaleToSize CGSizeMake(26, 26)
+/****************   偏好设置里存储的用户信息   *****************/
+#define KUserAccount @"UserAccount"         //帐号
+#define KUserSecret @"userSecret"       //密码
+#define KUserPortrait @"userPortrait"   //图像网址
+#define KUserIcon @"userIcon"       //头像  (这里本地存的照片是data 类型数据)
+//    //取出照片：
+//    NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+//    UIImage* image = [UIImage imageWithData:imageData];
+#define KUserIconPath @"userIconPath"     //通过微信登录时，获取到的是用户的头像地址。
+
+#define KUserCompanyId @"UserCompanyId"
+#define KUserPaySecret @"userPaySecret"   //支付密码
+#define KUserName @"userName"    //用户名字
+#define KUSerComPanyLogoPath @"uSerComPanyLogoPath" //公司Logo
+#define KUserIndustry @"userIndustry"    //行业
+#define KUserBankCard @"userBankCard"   //用户绑定的银行卡
+#define KUserExtractionSecret @"userExtractionSecret"  //提取佣金的密码
+#define KUserSex @"userSex"  //用户性别
+#define KUserTelephoneNum @"userTelephoneNum"   //私人电话
+#define KUserWorkPhone @"userWorkPhone"  //工作电话
+#define KUserCompanyName @"userCompanyName"     //公司名字
+#define KUserInfo @"userInfo"   //用户简介
+#define KUserCompanyAddress @"userCompanyAddress"  //公司地址
+#define KUserID @"userID"  /**< 用户唯一标识符 */
+#define KCurrentShelfCount @"currentShelfCount"  //当前货架个数
+#define KCurrentSelectedShelf @"currentSelectedShelf"    //当前选中的货架编号，NSInteger
+
+#define KCurrentShelfName @"CurrentShelfName" //当前柜台名字
+#define KCurrentShelfBgImage @"CurrentShelfBgImage" //当前柜台背景图
+
+#define KUserChatToken @"userChatToken"    //容云聊天用的token
+#define KUserChatID @"userChatID"   //融云chatID
+#define KAppLoginBgImage @"appLoginBg"//启动图片
+#define KAppLoginVideoUrl @"appLoginVideo"
+#define KAccessToken @"accessToken"    //accessToken
+#define KRefreshToken @"refreshToken"     //refreshToken
+
+#define KUserEngCompanyName @"companyEngName"
+
+/****************   生成二维码时要用到的前缀   *****************/
+#define KPrefixPersonInfo @"SK-PROFILE:"//个人中心前缀
+#define KPrefixDiscount @"SK-COUPON: " //优惠券前缀
+//#define KPrefixShelf @""    //货架前缀
+
+/****************   缓存路径   *****************/
+
+//#define KCompanyHousePath [NSHomeDirectory() stringByAppendingPathComponent:@"companyHouse.plist"]
+
+#define KCompanyHousePath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,  NSUserDomainMask,YES) objectAtIndex:0] stringByAppendingPathComponent:@"companyHouse.plist"]
+
+
+/****************   三方框架工具   *****************/
+#import <UIImageView+WebCache.h>
+#import <MagicalRecord/MagicalRecord.h>
+
+/****************   一次性获取几个数据   *****************/
+#define oneTimeInfoNum 10
+
+/****************   微货架中collectionView重用标示   *****************/
+#define KShelfProductCell @"shelfProductCell"
+
+/****************   当前使用的货架号   *****************/
+#define KCurrenUseSehlfNum @"currenUseSehlfNum"
+
+/****************   当前使用的货架号对应的id   *****************/
+#define KCurrentShelfID @"currentShelfID"
+
+/****************   添加微货架内容相关通知   *****************/
+#define KAddProductNote @"addProductNote"
+#define KAddProductKey @"addProductKey"
+#define KAddActionNote @"addActionNote"
+#define KAddActionKey @"addActionKey"
+#define KAddDiscountNote @"addDiscountNote"
+#define KAddDiscountKey @"addDiscountKey"
+
+#define KFavID @"favID"
+#define KRefreshDatasNote @"refreshDatasNote"
+
+/****************   首页页面的通知   *****************/
+#define KDiscoverNoteClickAction @"discoverNoteClickAction"
+#define KDiscoverNoteClickActionKey @"discoverNoteClickActionKey"
+#define KDiscoverNoteClickProduct @"discoverNoteClickProduct"
+#define KDiscoverNoteClickProductKey @"discoverNoteClickProductKey"
+#define KDiscoverNoteClickNews @"discoverNoteClickNews"
+#define KDiscoverNoteClickNewsKey @"discoverNoteClickNewsKey"
+
+#define KDisCoverNoteClickWithBtnKey @"disCoverNoteClickWithBtnKey"
+#define KDisCoverNoteClickWithBtn @"disCoverNoteClickWithBtn"
+
+/****************   首页页面的通知  销售达人头像点击通知  *****************/
+#define KSuperManIconClickNote @"superManIconClickNote"
+#define KSuperManIconClickNoteKey @"superManIconClickNoteKey"
+
+/****************   通知刷新好友列表   *****************/
+#define KReloadFriendsNote @"reloadFriendsNote"
+
+/****************   聊天界面   *****************/
+#define KChatVcDisappearNot @"KChatVcDisappearNot"
+#define KChatVcDisappearNotCustom @"KChatVcDisappearNotCustom"
+#define KChatVcDisappearNotUserKey @"chatVcDisappearNotUserKey"
+#define KChatVcDisappearNotLastMessageKey @"chatVcDisappearNotLastMessageKey"
+
+#define KDiscoverLunBoH 132   //发现页面的轮播器的高度
+#define KIconWH 22     //左上角头像的宽高
+
+
+#define KNewsCanNotScroll @"newsCanNotScroll"
+#define KProductCanNotScroll @"productCanNotScroll"
+#define KProductCanScroll @"productCanScroll"
+#define KNewsCanScroll @"newsCanScroll"
+
+#define KProductDetailCancelNote @"productDetailCancelNote"
+
+
+#define KConsigneeName @"consigneeName"   //收货人名字
+#define KConsigneePhone @"consigneePhone"  //收货人电话
+#define KConsigneeProvince @"consigneeProvince"   //收货人省份，市区
+#define KConsigneeDetailAddress @"consigneeDetailAddress"   //收货人详细地址
+
+#define KUserInfoBjImage @"userInfoBjImage"  //个人信息页面用户的背景图片
+
+#define KUserChoosedThePhoneNum @"userChoosedThePhoneNum"   //用户选择了号码
+#define KSalt @"_SK_YUZHONGKEJI_168_666"
+
+
+#define KScrollingProductNoti @"scrollingProductNoti"  //柜台管理里面滚动商品的点击通知
+#define KScrollingProductNotiKey @"scrollingProductNotiKey"
+
+#define KRefreshCounterProductNoti @"refreshCounterProductNoti"   //刷新柜台产品
+#define KRefreshCounterProductNotiKey @"refreshCounterProductNotiKey"
+
+#define KNewShelfManagerDeleteNoti @"newShelfManagerDeleteNoti"  //柜台管理中 批量管理通知
+#define KNewShelfManagerDeleteNotiKey @"newShelfManagerDeleteNotiKey"
+
+#define KNewAllProductSelectedDelete @"newAllProductSelectedDelete"  //柜台管理页面中 全选按钮点击后发布通知，给每个商品，显示选中对勾按钮
+#define KNewAllProductSelectedDeleteKey @"newAllProductSelectedDeleteKey"
+
+#define KSureDownProductNoti @"sureDownProduct"  //确定下架 商品
+#define KSureDownProductBackNoti @"sureDownProductBackNoti"   //确定下架
+#define KSureDownProductBackNotiKey @"sureDownProductBackNotiKey"
+
+#define KOpenID @"openID"  //微信登录的openid
+#define KWeChatToken @"token"  //微信登录的token
+
+//MBProgressHUD  提示框  一般网络请求时可以用这个
+#define SMShowPrompt(message)  MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];HUD.color = [UIColor lightGrayColor];HUD.labelText = (message);HUD.labelColor = [UIColor whiteColor];HUD.color = [UIColor blackColor];HUD.alpha = 0.4
+
+#import <FMDB.h>
+#define LVSQLITE_NAME @"my.sqlite"
+
+#import "MBProgressHUD+SM.h"
+
+/****************   客户管理通知   *****************/
+#define KAllCustomerDidChangeSuccess @"allCustomerDidChangeSuccess" //客户资料改变，可以是编辑或者新建用户
+
+//#define KRightItemWidth 85   //导航栏 右边的显示长宽
+#define KRightItemHeight 26
+#define KRightItemWidth 26
+
+#define KLeanCloudFormNameDefault @"StudioDataSetDefaultList"
+#define KLeanCloudObjectIdDefault @"57620f9cdf0eea0062d41a57"
+
+#define KLeanCloudFormName @"StudioDataSet"
+
+
+#define KWantBuyVCAllChoose @"wantBuyVCAllChoose"
+#define KWantBuyVCAllChooseKey @"wantBuyVCAllChooseKey"
+
+#define KOldCustomerAllChoose @"oldCustomerAllChoose"
+#define KOldCustomerAllChooseKey @"oldCustomerAllChooseKey"
+
+
+#define KGotoSonTaskVc @"gotoSonTaskVc"
+#define KGotoSonTaskVcKey @"gotoSonTaskVcKey"
+
+
+#define KSonTaskParticipantIconClick @"sonTaskParticipantIconClick"
+#define KSonTaskParticipantIconClickKey @"sonTaskParticipantIconClickKey"
+#define SMShowErrorNet [MBProgressHUD showError:@"网络异常,请重试"]
+
+
+#define KRefreshShelfProducts @"KRefreshShelfProducts"
+
+
+#endif /* ShuangKuai_pch */
+
+
+
+typedef void (^CellOption)();//cell option
+
+/********** 通知 ************/
+#define CustomMessageNotification @"CustomMessageNotification"
+
+#define NeedPostGroupChatViewController @"NeedPostGroupChatViewController" //通知，需要知道通知的
+
+#define QuitGroupNotification @"QuitGroupNotification"
+
+#define UnreadMessageCountNotification @"UnreadMessageCountNotification"
+
+#define TextFieldClickNotification @"TextFieldClickNotification"
+
+#define AddGroupMemberNotification @"AddGroupMemberNotification"
+
+#define DeleteGroupMemberNotification @"DeleteGroupMemberNotification"
+
+#define ChangeGroupMessageStateNotification @"ChangeGroupMessageStateNotification"
+
+#define UserIconImageChangeNotification @"UserIconImageChangeNotification"
+
+#define RefreshUnreadNotification @"RefreshUnreadNotification"
+
+#define ShowBageNotification @"ShowBageNotification"
+
+#define HiddenBageNotification @"HiddenBageNotification"
+
+#define ChangeToolBarHeightNotification @"ChangeToolBarHeightNotification"
+
+#define ConnectGetuiNotification @"ConnectGetuiNotification"
+
+#define PageControlStartAnimationNotification @"PageControlStartAnimationNotification"
+
+#define PageControlRemoveAnimationNotification @"PageControlRemoveAnimationNotification"
+
+#define RefreshCounterDataNotification @"RefreshCounterDataNotification"
+
+#define ShowSceneTabbarBageNotification @"ShowSceneTabbarBageNotification"
+
+#define RemoveSceneTabbarBageNotification @"RemoveSceneTabbarBageNotification"
+
+#define ShowTabbarBageNotification @"ShowTabbarBageNotification"
+
+#define RemoveTabbarBageNotification @"RemoveTabbarBageNotification"
+
+#define ScenePromotionNewMessageNotification @"ScenePromotionNewMessageNotification"
+
+#define RemoveReadedPushMessageNotification @"RemoveReadedPushMessageNotification"
+
+#define KRefreshLastTimNotification @"KRefreshLastTimNotification"
+
+#define KChangeCellHeight0 @"KChangeCellHeight0"
+
+#define RemoveTitleScrollViewTitleBageNotification @"RemoveTitleScrollViewTitleBageNotification"
+
+#define AddTitleScrollViewTitleBageNotification @"AddTitleScrollViewTitleBageNotification"

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15A2301" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SMBankDetailInfoController">
+            <connections>
+                <outlet property="bottomView" destination="aWx-Va-DnB" id="AYh-BK-OqF"/>
+                <outlet property="releaseBoundBtn" destination="cGk-7S-h6z" id="63t-JW-sod"/>
+                <outlet property="tableView" destination="tll-Qn-kuJ" id="X7J-XP-9Cf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWx-Va-DnB">
+                    <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGk-7S-h6z">
+                            <rect key="frame" x="20" y="5" width="280" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.1361224506" blue="0.12649592979999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="bsf-5j-MXv"/>
+                                <constraint firstAttribute="width" constant="280" id="kPt-v7-eEA"/>
+                            </constraints>
+                            <state key="normal" title="解除绑定">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="releaseBoundBtnClick:" destination="-1" eventType="touchUpInside" id="3nD-Lq-VwK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="MZG-nE-VuE"/>
+                        <constraint firstItem="cGk-7S-h6z" firstAttribute="centerX" secondItem="aWx-Va-DnB" secondAttribute="centerX" id="a0A-Kc-YmD"/>
+                        <constraint firstItem="cGk-7S-h6z" firstAttribute="centerY" secondItem="aWx-Va-DnB" secondAttribute="centerY" id="dWd-b3-S9F"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tll-Qn-kuJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="rkt-OD-pjx"/>
+                        <outlet property="delegate" destination="-1" id="hx4-nk-Yhv"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="aWx-Va-DnB" secondAttribute="bottom" id="1Z0-Fk-yJs"/>
+                <constraint firstAttribute="trailing" secondItem="aWx-Va-DnB" secondAttribute="trailing" id="PLv-PT-WHV"/>
+                <constraint firstItem="tll-Qn-kuJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YAs-Nr-Lib"/>
+                <constraint firstItem="aWx-Va-DnB" firstAttribute="top" secondItem="tll-Qn-kuJ" secondAttribute="bottom" id="b0b-fu-h5I"/>
+                <constraint firstAttribute="trailing" secondItem="tll-Qn-kuJ" secondAttribute="trailing" id="b8G-4K-yKu"/>
+                <constraint firstItem="tll-Qn-kuJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fn2-nQ-74s"/>
+                <constraint firstItem="aWx-Va-DnB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zLw-S1-oBz"/>
+            </constraints>
+            <point key="canvasLocation" x="376" y="356"/>
+        </view>
+    </objects>
+</document>

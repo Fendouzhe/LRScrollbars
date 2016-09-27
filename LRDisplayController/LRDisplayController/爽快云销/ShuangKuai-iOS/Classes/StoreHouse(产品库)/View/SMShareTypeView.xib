@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SMShareTypeView">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-TU-1lM">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="分享链接">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="shareWebsite:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZzQ-S1-vJR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2y-E4-08c">
+                    <rect key="frame" x="0.0" y="50" width="150" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="分享二维码">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="shareQrcode:" destination="iN0-l3-epB" eventType="touchUpInside" id="fYz-Kj-H5A"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqp-U4-cl7">
+                    <rect key="frame" x="0.0" y="100" width="150" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancel:" destination="iN0-l3-epB" eventType="touchUpInside" id="nA0-Aa-Of1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="F2y-E4-08c" firstAttribute="height" secondItem="Qqp-U4-cl7" secondAttribute="height" id="4Kq-4L-8f9"/>
+                <constraint firstItem="Qqp-U4-cl7" firstAttribute="top" secondItem="F2y-E4-08c" secondAttribute="bottom" id="7YB-Hk-5Ux"/>
+                <constraint firstItem="Qqp-U4-cl7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="COI-Qy-o3F"/>
+                <constraint firstItem="F2y-E4-08c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Kjw-a9-Kri"/>
+                <constraint firstItem="Qqp-U4-cl7" firstAttribute="top" secondItem="F2y-E4-08c" secondAttribute="bottom" id="M4L-OF-kNc"/>
+                <constraint firstItem="F2y-E4-08c" firstAttribute="top" secondItem="q5f-TU-1lM" secondAttribute="bottom" id="ZCB-mD-QZE"/>
+                <constraint firstItem="q5f-TU-1lM" firstAttribute="height" secondItem="F2y-E4-08c" secondAttribute="height" id="fci-X0-Qg7"/>
+                <constraint firstAttribute="bottom" secondItem="Qqp-U4-cl7" secondAttribute="bottom" id="hfr-0C-Aje"/>
+                <constraint firstItem="q5f-TU-1lM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i0a-hD-aCU"/>
+                <constraint firstAttribute="trailing" secondItem="q5f-TU-1lM" secondAttribute="trailing" id="ip6-YE-SeS"/>
+                <constraint firstItem="F2y-E4-08c" firstAttribute="top" secondItem="q5f-TU-1lM" secondAttribute="bottom" id="jyj-hP-njG"/>
+                <constraint firstAttribute="trailing" secondItem="Qqp-U4-cl7" secondAttribute="trailing" id="pbW-h8-fku"/>
+                <constraint firstItem="q5f-TU-1lM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xSg-pr-cWS"/>
+                <constraint firstAttribute="trailing" secondItem="F2y-E4-08c" secondAttribute="trailing" id="z0F-6q-eAf"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cancelBtn" destination="Qqp-U4-cl7" id="YSe-VD-Wq5"/>
+                <outlet property="qrcodeBtn" destination="F2y-E4-08c" id="7JQ-vB-xcc"/>
+                <outlet property="webBtn" destination="q5f-TU-1lM" id="TGF-O8-Ahd"/>
+            </connections>
+            <point key="canvasLocation" x="387" y="298"/>
+        </view>
+    </objects>
+</document>

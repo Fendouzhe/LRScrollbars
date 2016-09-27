@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="OGu-a2-emy" customClass="SMSynthesizeBtnView">
+            <rect key="frame" x="0.0" y="0.0" width="92" height="41"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="产品jiantou" translatesAutoresizingMaskIntoConstraints="NO" id="nwu-6m-0SN">
+                    <rect key="frame" x="88" y="19" width="8" height="4"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="4pE-ei-NsM"/>
+                        <constraint firstAttribute="height" constant="4" id="ZFK-sp-zNe"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96k-5Z-PcM">
+                    <rect key="frame" x="6" y="0.0" width="80" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="tPt-uS-Lpc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="价格排序">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.78094322640000002" green="0.0047094303710000004" blue="0.07699289024" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="priceAction:" destination="OGu-a2-emy" eventType="touchUpInside" id="SXl-08-oTy"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="96k-5Z-PcM" secondAttribute="bottom" id="85T-Kr-eLc"/>
+                <constraint firstItem="96k-5Z-PcM" firstAttribute="top" secondItem="OGu-a2-emy" secondAttribute="top" id="Fje-DG-43w"/>
+                <constraint firstItem="nwu-6m-0SN" firstAttribute="leading" secondItem="96k-5Z-PcM" secondAttribute="trailing" constant="2" id="VEy-9q-T72"/>
+                <constraint firstItem="nwu-6m-0SN" firstAttribute="centerY" secondItem="OGu-a2-emy" secondAttribute="centerY" id="VlU-7i-3FO"/>
+                <constraint firstItem="96k-5Z-PcM" firstAttribute="centerX" secondItem="OGu-a2-emy" secondAttribute="centerX" id="uG3-YF-WEa"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowHeadImageView" destination="nwu-6m-0SN" id="bek-ht-9Qi"/>
+                <outlet property="priceBtn" destination="96k-5Z-PcM" id="cAs-dG-Tc4"/>
+            </connections>
+            <point key="canvasLocation" x="311" y="351.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="产品jiantou" width="8" height="4"/>
+    </resources>
+</document>

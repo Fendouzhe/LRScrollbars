@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A2301" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="orderDetailSection1Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderDetailSection1Cell" id="KGk-i7-Jjw" customClass="SMOrderDetailSection1Cell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="didian" translatesAutoresizingMaskIntoConstraints="NO" id="IJm-hM-SIR">
+                        <rect key="frame" x="20" y="20" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="E46-sQ-ETr"/>
+                            <constraint firstAttribute="width" constant="22" id="X5g-WL-3jy"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货人：  陈兰 18622052203" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsG-Ap-9fs">
+                        <rect key="frame" x="52" y="15" width="163" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货地址：广东省广州市天河区林和西路157号保利中汇广场A座504" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K4-QI-aNu">
+                        <rect key="frame" x="52" y="35" width="258" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8K4-QI-aNu" firstAttribute="top" secondItem="xsG-Ap-9fs" secondAttribute="bottom" constant="5" id="C5G-d1-PDH"/>
+                    <constraint firstAttribute="trailing" secondItem="8K4-QI-aNu" secondAttribute="trailing" constant="10" id="CSS-UZ-Xhv"/>
+                    <constraint firstItem="8K4-QI-aNu" firstAttribute="leading" secondItem="IJm-hM-SIR" secondAttribute="trailing" constant="10" id="Cx8-VV-0mW"/>
+                    <constraint firstItem="IJm-hM-SIR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EMR-Eb-9D5"/>
+                    <constraint firstAttribute="bottom" secondItem="8K4-QI-aNu" secondAttribute="bottom" constant="8" id="Ut4-p1-xnD"/>
+                    <constraint firstItem="IJm-hM-SIR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="d0C-vk-3Gz"/>
+                    <constraint firstItem="xsG-Ap-9fs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="hep-v3-eB7"/>
+                    <constraint firstItem="xsG-Ap-9fs" firstAttribute="leading" secondItem="IJm-hM-SIR" secondAttribute="trailing" constant="10" id="hu6-Li-Ctq"/>
+                    <constraint firstItem="8K4-QI-aNu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="znm-QR-ZPe"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Ut4-p1-xnD"/>
+                        <exclude reference="znm-QR-ZPe"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLabel" destination="8K4-QI-aNu" id="Bdq-hn-CSx"/>
+                <outlet property="receiverNameLabel" destination="xsG-Ap-9fs" id="JEc-2H-xmP"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="didian" width="44" height="44"/>
+    </resources>
+</document>

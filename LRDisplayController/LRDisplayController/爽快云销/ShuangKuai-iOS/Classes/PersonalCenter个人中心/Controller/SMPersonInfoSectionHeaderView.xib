@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="TsG-XA-auJ" customClass="SMPersonInfoSectionHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爽快圈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W59-oP-abu">
+                    <rect key="frame" x="15" y="24" width="48" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTa-cv-qcf">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="JmM-II-hhI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="NTa-cv-qcf" firstAttribute="top" secondItem="TsG-XA-auJ" secondAttribute="top" id="2rt-dr-FnQ"/>
+                <constraint firstAttribute="trailing" secondItem="NTa-cv-qcf" secondAttribute="trailing" id="EQp-1g-ubd"/>
+                <constraint firstItem="W59-oP-abu" firstAttribute="leading" secondItem="TsG-XA-auJ" secondAttribute="leading" constant="15" id="d0Y-RV-LZl"/>
+                <constraint firstAttribute="bottom" secondItem="W59-oP-abu" secondAttribute="bottom" id="jJY-s9-Ci3"/>
+                <constraint firstItem="NTa-cv-qcf" firstAttribute="leading" secondItem="TsG-XA-auJ" secondAttribute="leading" id="yyr-6a-ugK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="W59-oP-abu" id="e5l-2R-u8g"/>
+                <outlet property="topView" destination="NTa-cv-qcf" id="7oR-mt-g87"/>
+            </connections>
+            <point key="canvasLocation" x="487" y="320"/>
+        </view>
+    </objects>
+</document>

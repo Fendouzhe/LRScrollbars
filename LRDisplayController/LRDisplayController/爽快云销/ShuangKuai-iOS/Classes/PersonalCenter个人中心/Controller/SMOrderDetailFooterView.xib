@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="JpS-by-Fyp" customClass="SMOrderDetailFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swm-SH-S7f">
+                    <rect key="frame" x="218" y="14" width="82" height="30"/>
+                    <color key="backgroundColor" red="0.78094322640000002" green="0.0047094303710000004" blue="0.07699289024" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="关闭订单"/>
+                    <connections>
+                        <action selector="closeOrderBtnAction:" destination="JpS-by-Fyp" eventType="touchUpInside" id="LT2-Mf-b8x"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq3-lt-QRm">
+                    <rect key="frame" x="20" y="14" width="82" height="30"/>
+                    <color key="backgroundColor" red="0.78094322640000002" green="0.0047094303710000004" blue="0.07699289024" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="82" id="IUY-eV-PlT"/>
+                        <constraint firstAttribute="height" constant="30" id="PdD-hV-CZ9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="修改价格"/>
+                    <connections>
+                        <action selector="revisedPriceBtn:" destination="JpS-by-Fyp" eventType="touchUpInside" id="lRG-mw-8X3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sm-9c-u2k">
+                    <rect key="frame" x="119" y="14" width="82" height="30"/>
+                    <color key="backgroundColor" red="0.78094322640000002" green="0.0047094303710000004" blue="0.07699289024" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="修改运费"/>
+                    <connections>
+                        <action selector="modifyFreightBtnAction:" destination="JpS-by-Fyp" eventType="touchUpInside" id="TFz-zB-c5t"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Swm-SH-S7f" secondAttribute="trailing" constant="20" id="Cca-06-Y0o"/>
+                <constraint firstItem="3Sm-9c-u2k" firstAttribute="centerX" secondItem="JpS-by-Fyp" secondAttribute="centerX" id="LMh-EM-kk3"/>
+                <constraint firstItem="Swm-SH-S7f" firstAttribute="width" secondItem="3Sm-9c-u2k" secondAttribute="width" id="Lhe-XV-4Hl"/>
+                <constraint firstItem="3Sm-9c-u2k" firstAttribute="centerY" secondItem="oq3-lt-QRm" secondAttribute="centerY" id="P6d-gL-UDk"/>
+                <constraint firstItem="3Sm-9c-u2k" firstAttribute="width" secondItem="oq3-lt-QRm" secondAttribute="width" id="WvZ-oF-Zkp"/>
+                <constraint firstItem="oq3-lt-QRm" firstAttribute="top" secondItem="JpS-by-Fyp" secondAttribute="top" constant="14" id="ZDD-TE-82G"/>
+                <constraint firstItem="Swm-SH-S7f" firstAttribute="centerY" secondItem="3Sm-9c-u2k" secondAttribute="centerY" id="n94-w4-luA"/>
+                <constraint firstItem="oq3-lt-QRm" firstAttribute="leading" secondItem="JpS-by-Fyp" secondAttribute="leading" constant="20" id="r7A-hv-8FZ"/>
+                <constraint firstItem="3Sm-9c-u2k" firstAttribute="height" secondItem="oq3-lt-QRm" secondAttribute="height" id="wKk-Fz-Ib3"/>
+                <constraint firstItem="Swm-SH-S7f" firstAttribute="height" secondItem="3Sm-9c-u2k" secondAttribute="height" id="wep-3Y-tGT"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeOrderBtn" destination="Swm-SH-S7f" id="Z11-Zy-yf9"/>
+                <outlet property="modifyFreightBtn" destination="3Sm-9c-u2k" id="cMf-oL-hKr"/>
+                <outlet property="revisedPricebtn" destination="oq3-lt-QRm" id="BNQ-Sx-wKc"/>
+            </connections>
+            <point key="canvasLocation" x="63" y="190"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A2301" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SMBottomView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJW-Tz-g6x">
+                    <rect key="frame" x="136" y="103" width="48" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gou66" translatesAutoresizingMaskIntoConstraints="NO" id="3ST-kl-z37">
+                    <rect key="frame" x="131" y="30" width="58" height="58"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="58" id="CJq-sQ-urS"/>
+                        <constraint firstAttribute="height" constant="58" id="CjU-Yy-3Ae"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3ST-kl-z37" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="5MU-mB-RBl"/>
+                <constraint firstItem="IJW-Tz-g6x" firstAttribute="top" secondItem="3ST-kl-z37" secondAttribute="bottom" constant="15" id="bb3-Zz-iW9"/>
+                <constraint firstItem="IJW-Tz-g6x" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dhc-Jd-DKt"/>
+                <constraint firstItem="3ST-kl-z37" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jLO-K8-XgK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="300" y="356"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="gou66" width="57" height="57"/>
+    </resources>
+</document>
