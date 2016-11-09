@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C7190701DD31A4B0014F2A3 /* LRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C71906F1DD31A4B0014F2A3 /* LRCollectionViewCell.m */; };
 		A0B8E8BC1C7D524B009FBFAE /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B8E8921C7D524B009FBFAE /* MJRefreshAutoFooter.m */; };
 		A0B8E8BD1C7D524B009FBFAE /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B8E8941C7D524B009FBFAE /* MJRefreshBackFooter.m */; };
 		A0B8E8BE1C7D524B009FBFAE /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B8E8961C7D524B009FBFAE /* MJRefreshComponent.m */; };
@@ -47,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C71906E1DD31A4B0014F2A3 /* LRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCollectionViewCell.h; sourceTree = "<group>"; };
+		8C71906F1DD31A4B0014F2A3 /* LRCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCollectionViewCell.m; sourceTree = "<group>"; };
 		A0B8E8911C7D524B009FBFAE /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		A0B8E8921C7D524B009FBFAE /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		A0B8E8931C7D524B009FBFAE /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 		A0E5F86E1C51EB7400D7E218 /* LRDisplayController */ = {
 			isa = PBXGroup;
 			children = (
+				8C71906E1DD31A4B0014F2A3 /* LRCollectionViewCell.h */,
+				8C71906F1DD31A4B0014F2A3 /* LRCollectionViewCell.m */,
 				A0B8E88F1C7D524B009FBFAE /* MJRefresh */,
 				A0FA3A871C52368400BD0B6B /* DisplayViewController */,
 				A0E5F8861C51EE8C00D7E218 /* Main */,
@@ -474,6 +479,7 @@
 				A0FA3A8F1C52368400BD0B6B /* LRDisplayViewController.m in Sources */,
 				A0B8E8C91C7D524B009FBFAE /* MJRefreshStateHeader.m in Sources */,
 				A0B8E8C11C7D524B009FBFAE /* MJRefreshAutoGifFooter.m in Sources */,
+				8C7190701DD31A4B0014F2A3 /* LRCollectionViewCell.m in Sources */,
 				A0E5F89B1C51F13D00D7E218 /* LRWYViewController.m in Sources */,
 				A0B8E8BD1C7D524B009FBFAE /* MJRefreshBackFooter.m in Sources */,
 				A0B8E8C61C7D524B009FBFAE /* MJRefreshBackStateFooter.m in Sources */,
