@@ -22,5 +22,8 @@
     NSLog(@"88");
 }
 
+- (instancetype)init{
+    return self;
+}
 
 @end
