@@ -10,6 +10,13 @@
 
 @implementation LRCollectionViewCell
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        
+    }
+    return self;
+}
+
 
 
 @end
