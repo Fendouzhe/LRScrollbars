@@ -10,6 +10,10 @@
 
 @implementation LRCollectionViewCell
 
+
+
+
+
 - (instancetype)init{
     if (self = [super init]) {
         
