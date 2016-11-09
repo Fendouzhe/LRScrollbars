@@ -18,5 +18,9 @@
 }
 
 
+- (void)dealloc{
+    NSLog(@"88");
+}
+
 
 @end
