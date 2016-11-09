@@ -12,7 +12,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        
+        NSLog(@"解决了bug");
     }
     return self;
 }
