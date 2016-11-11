@@ -17,7 +17,6 @@
     return self;
 }
 
-- (void)setFirame:(CGRect)firame{}
 
 - (void)dealloc{
     NSLog(@"88");
@@ -27,8 +26,5 @@
     return self;
 }
 
-- (void)setFrame:(CGRect)frame{
-    [super setFrame:frame];
-}
 
 @end
