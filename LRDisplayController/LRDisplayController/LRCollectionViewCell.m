@@ -17,6 +17,7 @@
     return self;
 }
 
+- (void)setFirame:(CGRect)firame{}
 
 - (void)dealloc{
     NSLog(@"88");
